@@ -10,7 +10,7 @@ body{
 }
 
 .container{
-    border: 2px solid white;
+    // border: 2px solid white;
     margin:  3rem;
     max-width: 50rem;
     height: 80vh;
@@ -24,6 +24,7 @@ body{
 
 .main{
     padding: 2rem 3rem;
+    margin-top: 3rem;
     background-color: $content-bg;
     &__header{
         @include flex(space-between,center);
@@ -92,6 +93,25 @@ body{
             width: 10px;
             margin: 3px;
         }
+    }
+    &__BtnBox{
+        margin-top: 2rem;
+    //    margin: 1rem;
+       button{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $light-green;
+        background-color: $body-bg;
+        cursor: pointer;
+        border: 2px solid $light-green;
+        &:hover{
+            border-color: rgb(222, 97, 97);
+            box-shadow: 0 0 10px 1px $light-green;
+        }
+       }
     }
 }
 

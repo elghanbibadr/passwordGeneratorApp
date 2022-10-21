@@ -12,3 +12,28 @@ html{
 ul{
     list-style: none;
 }
+
+
+// change the default styles of the input range
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    background: $whiteText;
+    border-radius: 6px;
+    height:4px;
+  }
+  
+
+
+input[type=range]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     border: 1px solid #000000;
+     height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: background 0.4s;
+    background: #ffffff;
+    &:hover{
+        background-color: $body-bg;
+        border: 1px solid white;
+    }
+  }

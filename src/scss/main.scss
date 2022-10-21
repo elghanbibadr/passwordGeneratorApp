@@ -18,3 +18,34 @@ body{
         margin-inline:auto;
     }
 }
+
+
+// MAIN
+
+.main{
+    &__header{
+        background-color: $content-bg;
+        @include flex(space-between,center);
+        flex-wrap: wrap;
+        padding: 2rem 3rem;
+        
+        p{
+            color:$whiteText;
+        }
+        #slider{
+            margin: 2rem auto ;      
+            width: 100%; 
+            outline: none;
+            display: inline-block;
+            cursor: pointer;
+        
+      }
+      #Slidevariable{
+        color: $light-green;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+    }
+}
+
+

@@ -14,6 +14,30 @@ ul {
   list-style: none;
 }
 
+input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  background: #e7e6eb;
+  border-radius: 6px;
+  height: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+  background: #ffffff;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background-color: #0f0e14;
+  border: 1px solid white;
+}
+
 body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.6rem;
@@ -78,5 +102,39 @@ body {
   .container {
     margin-inline: auto;
   }
+}
+
+.main__header {
+  background-color: #24232b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem 3rem;
+}
+
+.main__header p {
+  color: #e7e6eb;
+}
+
+.main__header #slider {
+  margin: 2rem auto;
+  width: 100%;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.main__header #Slidevariable {
+  color: #a4ffaf;
+  font-size: 3rem;
+  font-weight: bold;
 }
 /*# sourceMappingURL=main.css.map */

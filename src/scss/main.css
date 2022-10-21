@@ -1,1 +1,23 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;600;700&display=swap");
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+/*# sourceMappingURL=main.css.map */

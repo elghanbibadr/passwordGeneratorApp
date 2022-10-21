@@ -1,0 +1,29 @@
+
+// Mixins
+
+@mixin tablette {
+    @media screen and (min-width:$tablette) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width:$desktop) {
+        @content;
+    }
+}
+
+@mixin flex($justifyContent,$alignitems) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignitems;
+    
+}
+
+@mixin flex-row($justifyContent,$alignitems) {
+    flex-direction: row;
+    
+}
+@mixin flex-colum($justifyContent,$alignitems) {
+    flex-direction: column;
+    
+}

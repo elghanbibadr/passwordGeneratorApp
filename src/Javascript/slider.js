@@ -3,7 +3,7 @@
      constructor(){
          this.input=document.querySelector('#slider');
          this.label=document.querySelector('#Slidevariable');
-         this.input.addEventListener('input',this.intialieValue.bind(this))
+         this.input.addEventListener('input',this.intialieValue.bind(this));
      }
 
      intialieValue(){
@@ -12,6 +12,6 @@
   
  }
 
-let slider=new Slider();
+ export let slider=new Slider();
 
 

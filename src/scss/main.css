@@ -222,4 +222,19 @@ body {
   -webkit-box-shadow: 0 0 10px 1px #a4ffaf;
           box-shadow: 0 0 10px 1px #a4ffaf;
 }
+
+.colorizeChoiceBox {
+  background-color: #a4ffaf !important;
+  position: relative;
+}
+
+.colorizeChoiceBox::after {
+  content: 'x';
+  color: black;
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  left: 3px;
+  top: -3px;
+}
 /*# sourceMappingURL=main.css.map */

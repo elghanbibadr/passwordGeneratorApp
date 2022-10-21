@@ -10,18 +10,41 @@
 <body>
     
 <div class="container">
-    <!-- <header class="header">
+     <header class="header">
         <h3 class="header__title">Password Generator</h3>
         <div class="header__passwordBox">
          <h2  id="password" >P4$5W0rD!</h2>
          <img src="/src/Assets/icon-copy.svg" alt="icon-copy" class="header__copiIcon">
         </div>
-    </header> -->
+    </header> 
     <main class="main">
+        <!-- main header -->
         <div class="main__header">
             <p>Character Length</p>
             <label id='Slidevariable'>0</label>
           <input id='slider' type='range' min='0' max='20' step='1' value='0' />
+        </div>
+
+        <!-- main main -->
+        <div class="main__body">
+            <ul class="main__choices">
+                <li><span class="checkBox"></span>Include Uppercase Letters</li>
+                <li><span class="checkBox"></span>Include Lowercase Letters</li>
+                <li><span class="checkBox"></span>Include Numbers</li>
+                <li><span class="checkBox"></span>Include Symbols</li>
+            </ul>
+        </div>
+        <!-- main footer -->
+        <div class="main__footer">
+            <h2>STRENGTH </h2>
+            <div class="password-powerBox">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
         </div>
     </main>
 </div>

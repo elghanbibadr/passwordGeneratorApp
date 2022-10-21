@@ -23,11 +23,11 @@ body{
 // MAIN
 
 .main{
+    padding: 2rem 3rem;
+    background-color: $content-bg;
     &__header{
-        background-color: $content-bg;
         @include flex(space-between,center);
         flex-wrap: wrap;
-        padding: 2rem 3rem;
         
         p{
             color:$whiteText;
@@ -45,6 +45,53 @@ body{
         font-size: 3rem;
         font-weight: bold;
       }
+    }
+    // /main body
+
+    &__body{
+        color: $whiteText;
+        margin-top: 2rem;
+    }
+
+    &__choices{
+        li{
+            margin-bottom: 1rem;
+        }
+        span{
+            height: 20px;
+            transform: translateY(3px);
+             cursor: pointer;
+            width:20px;
+            border: 2px solid white;
+            margin-inline: 1rem;
+            display: inline-block;
+            transition: background 0.3s;
+            &:hover{
+                background-color: $light-green;
+            }
+        }
+    }
+
+    // main footer
+    &__footer{
+        @include flex(space-between,center);
+        background-color: #18171f;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        h2{
+            color: $lightText;
+             font-weight: 300;
+            font-size: 2rem;
+        }
+       ul{
+        display: flex;
+       }
+        ul li{
+            height: 30px;
+            border: 2px solid white;
+            width: 10px;
+            margin: 3px;
+        }
     }
 }
 

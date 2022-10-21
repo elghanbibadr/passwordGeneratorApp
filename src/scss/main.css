@@ -20,4 +20,63 @@ body {
   letter-spacing: 0.4px;
   font-weight: 500;
 }
+
+body {
+  background-color: #0f0e14;
+  padding: 3rem;
+}
+
+.container {
+  border: 2px solid white;
+  margin: 3rem;
+  max-width: 50rem;
+  height: 80vh;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    margin-inline: auto;
+  }
+}
+
+.header__title {
+  color: #42404c;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header__passwordBox {
+  background-color: #24232b;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__passwordBox #password {
+  border: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  outline: none;
+  color: #42404c;
+}
+
+.header__copiIcon {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.header__copiIcon:hover {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+}
 /*# sourceMappingURL=main.css.map */

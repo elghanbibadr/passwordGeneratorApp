@@ -2,6 +2,7 @@
 @import './partials/mixins';
 @import './partials/reset';
 @import './partials/typography';
+@import './partials/header';
 
 body{
     background-color: $body-bg;
@@ -16,39 +17,4 @@ body{
     @include tablette{
         margin-inline:auto;
     }
-}
-
-// HEADER SECTION
-.header{
-    
-    &__title{
-        color: $lightText;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    &__passwordBox{
-        background-color: $content-bg;
-        padding: 2rem;
-        @include flex(space-between,center);
-
-     #password{
-        border: 0;
-        font-size: 2rem;
-        font-weight: bold;
-        outline: none;
-        color: $lightText;
-     } 
-
-  }
-
-  &__copiIcon{
-    cursor: pointer;
-    transition:transform 0.3s;
-    &:hover{
-    transform: translateY(-1rem);
-    }
-  }
-
-  
 }

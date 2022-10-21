@@ -21,24 +21,6 @@ body {
   font-weight: 500;
 }
 
-body {
-  background-color: #0f0e14;
-  padding: 3rem;
-}
-
-.container {
-  border: 2px solid white;
-  margin: 3rem;
-  max-width: 50rem;
-  height: 80vh;
-}
-
-@media screen and (min-width: 500px) {
-  .container {
-    margin-inline: auto;
-  }
-}
-
 .header__title {
   color: #42404c;
   text-align: center;
@@ -78,5 +60,23 @@ body {
 .header__copiIcon:hover {
   -webkit-transform: translateY(-1rem);
           transform: translateY(-1rem);
+}
+
+body {
+  background-color: #0f0e14;
+  padding: 3rem;
+}
+
+.container {
+  border: 2px solid white;
+  margin: 3rem;
+  max-width: 50rem;
+  height: 80vh;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    margin-inline: auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */

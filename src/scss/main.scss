@@ -131,3 +131,32 @@ body{
         top: -3px;
     }
 }
+
+.message{
+ font-size: 1.7rem;
+transform: translateX(1rem);
+color: white;
+}
+
+.message--red{
+    color: red !important;
+}
+
+.message--white{
+    color: white !important;
+}
+
+
+.pass-tooweek{
+    background-color:rgba(255, 0, 0, 0.72) ;
+}
+.pass-week{
+    background-color:rgb(248, 102, 102)   ;
+}
+.pass-medium{
+    background-color: rgb(243, 172, 42) ;
+}
+
+.pass-strong{
+    background-color: $light-green;
+}

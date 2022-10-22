@@ -237,4 +237,35 @@ body {
   left: 3px;
   top: -3px;
 }
+
+.message {
+  font-size: 1.7rem;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+  color: white;
+}
+
+.message--red {
+  color: red !important;
+}
+
+.message--white {
+  color: white !important;
+}
+
+.pass-tooweek {
+  background-color: rgba(255, 0, 0, 0.72);
+}
+
+.pass-week {
+  background-color: #f86666;
+}
+
+.pass-medium {
+  background-color: #f3ac2a;
+}
+
+.pass-strong {
+  background-color: #a4ffaf;
+}
 /*# sourceMappingURL=main.css.map */

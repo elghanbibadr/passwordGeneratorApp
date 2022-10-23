@@ -15,7 +15,8 @@ let PASS_STRENGTH_OPTCION_FOR_MORE_SECURE={1:'too week',2 :'week',3:'medium',4:'
 let checkBoxesArray=Array.from(checkBoxes);
 let passwordBgColor=Array.from(BoxesPower.querySelectorAll(' li'));
 let messge=document.createElement('h1');
-let userChoice=[];
+ let userChoice;
+// let userChoice;
 let passwordOptions={
   uppercase:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   lowercase:'abcdefghijklmnopqrstuvwxyz',
@@ -31,9 +32,10 @@ GeneratePasswordBtn.addEventListener('click',GeneratePasswordBtnForUser)
 // FUNCTIONS
 function selectChoice(element){
   element.classList.toggle('colorizeChoiceBox'); 
-  userChoice.push(element);
+  // userChoice.push(element);
   //   now i need to update the length of how many choice do i have
-  choicesOption.number=checkBoxesArray.filter(v=>v.classList.contains('colorizeChoiceBox')).length;
+  userChoice=checkBoxesArray.filter(v=>v.classList.contains('colorizeChoiceBox'))
+  choicesOption.number=userChoice.length;
 //   now we also need to check the label for how we many charectere we have(password length prefered by the user)
   passwordLength= slider.label.textContent;
   // update the user choices depending on user selection
@@ -103,27 +105,25 @@ function colorizeChoiceBoxDependOnPassworedPower(passStrength){
 // function that takes user prefrencies and generate a random password accordingly
 function GeneratePasswordBtnForUser(){ 
   passwordLength=slider.label.textContent;
-  if ((!StrengthBoxesColore && passwordLength==0) || (passwordLength==0) ){
+  if ((!userChoice && passwordLength==0) || (passwordLength==0) ){
     passwordContent.textContent=''
     alert('Please make sure that length is at least 1');
     return;
   }
   // we assuming that the user hasn't enetered anything of choice yet
-  if (!StrengthBoxesColore){
+  passwordContent.style.color='white'
+  if (!userChoice){
    passwordContent.textContent=generateString(passwordLength);
-   passwordContent.style.color='white'
 
+  }else{
+    // now lets handle when user select somthing
+    passwordContent.textContent=generateString(passwordLength,true);
   }
   
+  //  if (StrengthBoxesColore){
+  //   passwordContent.style.color='white';
   
-  // now lets handle when user select somthing
-   if (StrengthBoxesColore){
-    passwordContent.textContent=generateString(passwordLength,true);
-    passwordContent.style.color='white';
-  
-   }
- 
-  
+  //  }
  }
  
 
@@ -133,20 +133,18 @@ function GeneratePasswordBtnForUser(){
 // declare all characters
 
 function generateString(length,userSelectSomething) {
- 
+   let character;
   let {lowercase}=passwordOptions;
-  let character=lowercase;
+  character+=lowercase;
 
-   if (!userSelectSomething){
-      // character+=lowercase;
-      console.log(character)
-   } else{
-      userChoice.forEach(choice=>{
-     let attributeName=choice.getAttribute('data-type');
-     character+=`${passwordOptions[`${attributeName}`]}` ;
-     console.log(character)
-    })
-   }
+   if (userSelectSomething){
+     character='';
+     userChoice.forEach(choice=>{
+    let attributeName=choice.getAttribute('data-type');
+    character+=`${passwordOptions[`${attributeName}`]}` ;
+      
+   })
+  }
    
     let result = ' ';
     const charactersLength = character.length;

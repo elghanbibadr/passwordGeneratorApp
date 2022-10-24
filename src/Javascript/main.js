@@ -1,13 +1,15 @@
 
 import './slider.js';
 import {slider} from './slider.js';
+import './generatePassword.js';
+import {GeneratePasswordForUser} from './generatePassword.js';
 
 // VARIABELS
 let checkBoxes=document.querySelectorAll('.checkBox');
 let choicesOption={number:0,isLengthGreatherThanEight:false};
-let passwordLength
+export let passwordLength;
 let StrengthBoxesColore;
-let passwordContent=document.querySelector('#password')
+export let passwordContent=document.querySelector('#password')
 let SECURE_LENGTH=8;
 let BoxesPower=document.querySelector('.password-powerBox');
 let PASS_STRENGTH_OPTCION_FOR_LESS_SECURE={1:'too week',2 :'week',3:'week',4:'medium'};
@@ -15,23 +17,23 @@ let PASS_STRENGTH_OPTCION_FOR_MORE_SECURE={1:'too week',2 :'week',3:'medium',4:'
 let checkBoxesArray=Array.from(checkBoxes);
 let passwordBgColor=Array.from(BoxesPower.querySelectorAll(' li'));
 let messge=document.createElement('h1');
- let userChoice;
+ export let userChoice;
  let copiedMessg=document.querySelector('.copyPssMsg')
  let CopyIcon=document.querySelector('.header__copiIcon');
+
+
 // let userChoice;
-let passwordOptions={
-  uppercase:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  lowercase:'abcdefghijklmnopqrstuvwxyz',
-  number:'0123456789',
-  symbols:'ŽŠ/.<#&éè-çàç)=$ù!°*€'
-} ;
-let GeneratePasswordBtn=document.querySelector('.generateBtn');
+
 let mainFooter=document.querySelector('.main__footer');
 CopyIcon.addEventListener('click',copyPasswordToClipboard);
 
+export function getLength(){
+ return   passwordLength=slider.label.textContent;
+
+}
+
 // EVENT LISTENER
 checkBoxes.forEach(element=>element.addEventListener('click',(e)=>selectChoice(e.target)))
-GeneratePasswordBtn.addEventListener('click',GeneratePasswordForUser)
 
 // FUNCTIONS
 function selectChoice(element){
@@ -45,8 +47,6 @@ function selectChoice(element){
   choicesOption.isLengthGreatherThanEight= passwordLength > SECURE_LENGTH ? true:false;
   getPasswordPower();
 }
-
-
 
 function getPasswordPower(){
   
@@ -66,8 +66,6 @@ function getPasswordPower(){
     }
 }
 
-
-
 // this function responsible for getting the strength of the choisen password options and show it to the user
 function showUserMessage(value='select choice'){
   userChoiceStrength(value);
@@ -77,7 +75,7 @@ function showUserMessage(value='select choice'){
   BoxesPower.insertAdjacentElement('beforebegin',messge);
 }
 
-// function to check if user select or not 
+// function to check if user select choice or not 
 function userChoiceStrength(value){
   if( value=='select choice' ){
      messge.style.color='red';
@@ -89,7 +87,7 @@ function userChoiceStrength(value){
    }
 }
 
-
+// colorize the boxes with the color representing the power of the selected password choices
 function colorizeChoiceBoxDependOnPassworedPower(passStrength){
   // lets get the element to be colorized
    StrengthBoxesColore=passwordBgColor.slice(0,choicesOption.number);
@@ -103,44 +101,6 @@ function colorizeChoiceBoxDependOnPassworedPower(passStrength){
   })
 }
 
-// function that takes user prefrencies and generate a random password accordingly
-function GeneratePasswordForUser(){ 
-  passwordLength=slider.label.textContent;
-  if ((!userChoice && passwordLength==0) || (passwordLength==0) ){
-    passwordContent.textContent=''
-    alert('Please make sure that length is at least 1');
-    return;
-  }
-  // we assuming that the user hasn't enetered anything of choice yet
-  passwordContent.style.color='white'
-  if (!userChoice){
-   passwordContent.textContent=generateString(passwordLength);
-
-  }else{
-    // now lets handle when user select somthing
-    passwordContent.textContent=generateString(passwordLength,true);
-  }
- }
- 
-
-// Generate Random String of a specified length
-function generateString(length,userSelectSomething) {
-  let character=passwordOptions.lowercase;
-
-   if (userSelectSomething){
-     userChoice.forEach(choice=>{
-    let attributeName=choice.getAttribute('data-type');
-    character+=`${passwordOptions[`${attributeName}`]}` ;
- 
-   })
-  }
-    let result = ' ';
-    const charactersLength = character.length;
-    for ( let i = 0; i < +length; i++ ) {
-        result += character.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-}
 
 
 // function responsible for copying password to clipboard
@@ -153,12 +113,6 @@ function copyPasswordToClipboard() {
  hideElementAfterSomeTime(copiedMessg,2000);
 
 }
-
-// function resonsibleForUpdate classLIst and styles
-function updateClassesFoElement(element,className){
-  return  element.classList.add(`${className}`);
-}
-
 
 function hideElementAfterSomeTime(element,timing){
   return setTimeout(()=>element.style.display='none',timing)

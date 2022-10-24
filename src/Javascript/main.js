@@ -31,7 +31,7 @@ CopyIcon.addEventListener('click',copyPasswordToClipboard);
 
 // EVENT LISTENER
 checkBoxes.forEach(element=>element.addEventListener('click',(e)=>selectChoice(e.target)))
-GeneratePasswordBtn.addEventListener('click',GeneratePasswordBtnForUser)
+GeneratePasswordBtn.addEventListener('click',GeneratePasswordForUser)
 
 // FUNCTIONS
 function selectChoice(element){
@@ -80,12 +80,12 @@ function showUserMessage(value='select choice'){
 // function to check if user select or not 
 function userChoiceStrength(value){
   if( value=='select choice' ){
-    messge.style.color='red';
+     messge.style.color='red';
      hideElementAfterSomeTime(messge,2000);
    } 
     else{
-     messge.style.color='white';
-     messge.style.display='block';
+       messge.style.color='white'
+      messge.style.display='block';
    }
 }
 
@@ -93,9 +93,8 @@ function userChoiceStrength(value){
 function colorizeChoiceBoxDependOnPassworedPower(passStrength){
   // lets get the element to be colorized
    StrengthBoxesColore=passwordBgColor.slice(0,choicesOption.number);
-  
   // lets make bg transparent from all element not to be clorized
-   passwordBgColor.forEach(element=>{
+  passwordBgColor.forEach(element=>{
     if (!StrengthBoxesColore.includes(element))  element.className='passBgPower';
    })
     //  add color for bg depending on password strength
@@ -105,7 +104,7 @@ function colorizeChoiceBoxDependOnPassworedPower(passStrength){
 }
 
 // function that takes user prefrencies and generate a random password accordingly
-function GeneratePasswordBtnForUser(){ 
+function GeneratePasswordForUser(){ 
   passwordLength=slider.label.textContent;
   if ((!userChoice && passwordLength==0) || (passwordLength==0) ){
     passwordContent.textContent=''
@@ -121,39 +120,25 @@ function GeneratePasswordBtnForUser(){
     // now lets handle when user select somthing
     passwordContent.textContent=generateString(passwordLength,true);
   }
-  
-  //  if (StrengthBoxesColore){
-  //   passwordContent.style.color='white';
-  
-  //  }
  }
  
 
-
-// program to generate random strings
-
-// declare all characters
-
+// Generate Random String of a specified length
 function generateString(length,userSelectSomething) {
-   let character;
-  let {lowercase}=passwordOptions;
-  character+=lowercase;
+  let character=passwordOptions.lowercase;
 
    if (userSelectSomething){
-     character='';
      userChoice.forEach(choice=>{
     let attributeName=choice.getAttribute('data-type');
     character+=`${passwordOptions[`${attributeName}`]}` ;
-      
+ 
    })
   }
-   
     let result = ' ';
     const charactersLength = character.length;
     for ( let i = 0; i < +length; i++ ) {
         result += character.charAt(Math.floor(Math.random() * charactersLength));
     }
-
     return result;
 }
 
@@ -169,7 +154,13 @@ function copyPasswordToClipboard() {
 
 }
 
+// function resonsibleForUpdate classLIst and styles
+function updateClassesFoElement(element,className){
+  return  element.classList.add(`${className}`);
+}
+
 
 function hideElementAfterSomeTime(element,timing){
   return setTimeout(()=>element.style.display='none',timing)
 }
+

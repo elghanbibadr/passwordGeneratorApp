@@ -246,11 +246,12 @@ body {
 }
 
 .message--red {
-  color: red !important;
+  color: red;
 }
 
 .message--white {
-  color: white !important;
+  color: white;
+  display: block;
 }
 
 .pass-tooweek {

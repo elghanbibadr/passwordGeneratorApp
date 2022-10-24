@@ -2,7 +2,7 @@
 import './slider.js';
 import {slider} from './slider.js';
 import './generatePassword.js';
-import {GeneratePasswordForUser} from './generatePassword.js';
+// import {GeneratePasswordForUser} from './generatePassword.js';
 
 // VARIABELS
 let checkBoxes=document.querySelectorAll('.checkBox');

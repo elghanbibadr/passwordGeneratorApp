@@ -96,7 +96,6 @@ body{
     }
     &__BtnBox{
         margin-top: 2rem;
-    //    margin: 1rem;
        button{
         width: 100%;
         padding: 1rem;
@@ -136,7 +135,6 @@ body{
  font-size: 1.7rem;
 transform: translateX(1rem);
 color: white;
-// display: block !important;
 }
 
 .message--red{
@@ -160,4 +158,10 @@ color: white;
 
 .pass-strong{
     background-color: $light-green;
+}
+
+
+.copyPssMsg{
+    color: $light-green;
+    display: none;
 }

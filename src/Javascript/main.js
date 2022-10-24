@@ -16,6 +16,8 @@ let checkBoxesArray=Array.from(checkBoxes);
 let passwordBgColor=Array.from(BoxesPower.querySelectorAll(' li'));
 let messge=document.createElement('h1');
  let userChoice;
+ let copiedMessg=document.querySelector('.copyPssMsg')
+ let CopyIcon=document.querySelector('.header__copiIcon');
 // let userChoice;
 let passwordOptions={
   uppercase:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -25,14 +27,15 @@ let passwordOptions={
 } ;
 let GeneratePasswordBtn=document.querySelector('.generateBtn');
 let mainFooter=document.querySelector('.main__footer');
-// EVENT LISTENER
+CopyIcon.addEventListener('click',copyPasswordToClipboard);
 
+// EVENT LISTENER
 checkBoxes.forEach(element=>element.addEventListener('click',(e)=>selectChoice(e.target)))
 GeneratePasswordBtn.addEventListener('click',GeneratePasswordBtnForUser)
+
 // FUNCTIONS
 function selectChoice(element){
   element.classList.toggle('colorizeChoiceBox'); 
-  // userChoice.push(element);
   //   now i need to update the length of how many choice do i have
   userChoice=checkBoxesArray.filter(v=>v.classList.contains('colorizeChoiceBox'))
   choicesOption.number=userChoice.length;
@@ -75,11 +78,10 @@ function showUserMessage(value='select choice'){
 }
 
 // function to check if user select or not 
-
 function userChoiceStrength(value){
   if( value=='select choice' ){
     messge.style.color='red';
-    setTimeout(()=>messge.style.display='none',2000);
+     hideElementAfterSomeTime(messge,2000);
    } 
     else{
      messge.style.color='white';
@@ -156,3 +158,18 @@ function generateString(length,userSelectSomething) {
 }
 
 
+// function responsible for copying password to clipboard
+function copyPasswordToClipboard() {
+  if(passwordContent.textContent=='P4$5W0rD!')return;
+   copiedMessg.style.display='block';
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(passwordContent.textContent);
+  // hide the message after 2 sec
+ hideElementAfterSomeTime(copiedMessg,2000);
+
+}
+
+
+function hideElementAfterSomeTime(element,timing){
+  return setTimeout(()=>element.style.display='none',timing)
+}

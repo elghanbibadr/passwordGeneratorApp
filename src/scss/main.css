@@ -268,4 +268,9 @@ body {
 .pass-strong {
   background-color: #a4ffaf;
 }
+
+.copyPssMsg {
+  color: #a4ffaf;
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */

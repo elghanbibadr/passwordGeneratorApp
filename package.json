@@ -1,0 +1,24 @@
+{
+  "name": "passwordgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elghanbibadr/passwordGeneratorApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elghanbibadr/passwordGeneratorApp/issues"
+  },
+  "homepage": "https://github.com/elghanbibadr/passwordGeneratorApp#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}

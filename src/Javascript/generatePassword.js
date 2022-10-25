@@ -1,4 +1,4 @@
-import {passwordContent,passwordLength,getLength,userChoice} from './main.js';
+import {myApp} from './app.js';
 
 class GeneratePassword{
     constructor(){
@@ -18,7 +18,7 @@ class GeneratePassword{
     let character=this.passwordOptions.lowercase;
   
      if (userSelectSomething){
-       userChoice.forEach(choice=>{
+       myApp.userChoice.forEach(choice=>{
       let attributeName=choice.getAttribute('data-type');
       character+=`${this.passwordOptions[`${attributeName}`]}` ;
    
@@ -34,32 +34,27 @@ class GeneratePassword{
 
 // function that takes user prefrencies and generate a random password accordingly
    GeneratePasswordForUser(){ 
-    getLength();
-    if ((!userChoice && passwordLength==0) || (passwordLength==0) ){
-      passwordContent.textContent=''
+    myApp.getLength();
+    if ((!myApp.userChoice && myApp.passwordLength==0) || (myApp.passwordLength==0) ){
+      myApp.passwordContent.textContent=''
       alert('Please make sure that length is at least 1');
       return;
     }
     // we assuming that the user hasn't enetered anything of choice yet
-    passwordContent.style.color='white'
-    if (!userChoice){
-     passwordContent.textContent=this.generateRandomString(passwordLength);
+    myApp.passwordContent.style.color='white'
+    if (!myApp.userChoice){
+     myApp.passwordContent.textContent=this.generateRandomString(myApp.passwordLength);
   
     }else{
       // now lets handle when user select somthing
-      passwordContent.textContent=this.generateRandomString(passwordLength,true);
+      myApp.passwordContent.textContent=this.generateRandomString(myApp.passwordLength,true);
     }
    }
 }
 
 
-
 let generateMyPassword=new GeneratePassword();
 
-   
-  console.log(generateMyPassword)
-// export { GeneratePasswordForUser};
-  
 
 
 

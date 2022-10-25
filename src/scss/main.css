@@ -207,8 +207,7 @@ body {
 
 .main__BtnBox button {
   width: 100%;
-  padding: 1rem;
-  border-radius: 15px;
+  padding: 2rem 1rem;
   text-transform: uppercase;
   font-weight: bold;
   color: #a4ffaf;
